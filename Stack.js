@@ -12,7 +12,8 @@ class Stack {
 
   pop() {
     if (this.size) {
-      return this.storage.splice(this.size-1, 1)[0];
+      this.size--;
+      return this.storage.splice(this.size, 1)[0];
     }
   }
 
