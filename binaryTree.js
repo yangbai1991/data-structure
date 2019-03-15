@@ -36,9 +36,21 @@ class BinaryTree {
       }
     }
   }
+
+  inOrderTraversal() {
+    this.inOrderTraversalNode(this.root);
+  }
+
+  inOrderTraversalNode(node) {
+    if (node !== null) {
+      this.inOrderTraversalNode(node.left);
+      console.log(node.value);
+      this.inOrderTraversalNode(node.right);
+    }
+  }
 }
 
-const items = [8, 4, 9, 3, 6];
+const items = [8, 4, 9, 10, 3, 6, 2, 7, 1, 5];
 const tree = new BinaryTree();
 
 items.map(item => {
@@ -46,3 +58,4 @@ items.map(item => {
 });
 
 console.log(JSON.stringify(tree));
+tree.inOrderTraversal();
